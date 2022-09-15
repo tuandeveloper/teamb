@@ -2,7 +2,7 @@ import "./home.scss";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import myData from "./employee.json";
-import DataGrid, { Column, Pager, Paging } from "devextreme-react/data-grid";
+import DataGrid, { Column, Pager, Paging, SearchPanel } from "devextreme-react/data-grid";
 import { Button } from "devextreme-react/button";
 import { EmployeeDetailPopup } from "./employeeDetailPopup";
 
@@ -36,6 +36,9 @@ export default function Home() {
         onRowDblClick={viewEmployeeDetail}
         id="gridContainer"
       >
+        <SearchPanel visible={true}
+            width={240}
+            placeholder="Search..." />
         <Column
           dataField="employeeId"
           caption="Employee Identifier"
